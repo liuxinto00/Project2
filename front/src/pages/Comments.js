@@ -1,8 +1,14 @@
 import React from "react";
 import axios from "axios";
-import { Row, Col } from "react-bootstrap";
+//import { Row, Col } from "react-bootstrap";
 import PropTypes from "prop-types";
-import "./style/comments.css";
+import { Comment } from "semantic-ui-react";
+
+// const sectionStyle = {
+//   width: "60%",
+//   height: "100px",
+// };
+//import "./style/comments.css";
 
 class Comments extends React.Component {
   constructor(props) {
@@ -35,20 +41,21 @@ class Comments extends React.Component {
       content = this.state.comments.map((value, index) => {
         return (
           <div key={index}>
-            <hr />
-            <Row>
-              <Col col={"3"}>
-                <h5>{value.userToken}</h5>
-              </Col>
-              <Col col={"3"}>
-                <h5>{value.time}</h5>
-              </Col>
-            </Row>
-            <Row className={"mb-3"}>
-              <Col col={"12"}>
-                <p>{value.comment}</p>
-              </Col>
-            </Row>
+            <Comment.Group>
+              <Comment>
+                <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
+
+                <Comment.Author>
+                  {value.userToken ? value.userToken : "Jack"}
+                </Comment.Author>
+                <Comment.Content>
+                  <Comment.Metadata>
+                    <div>{value.time}</div>
+                  </Comment.Metadata>
+                  <Comment.Text>{value.comment}</Comment.Text>
+                </Comment.Content>
+              </Comment>
+            </Comment.Group>
           </div>
         );
       });

@@ -7,8 +7,8 @@ import Comments from "./Comments";
 import Cookies from "universal-cookie";
 import NavigationBar from "./NavigationBar";
 import Jumbo from "./Jumbotron.js";
-import Button from "react-bootstrap/Button";
-import "./style/singlePages.css";
+import { Grid, Button } from "semantic-ui-react";
+//import "./style/singlePages.css";
 
 class SinglePages extends React.Component {
   constructor(props) {
@@ -103,25 +103,36 @@ class SinglePages extends React.Component {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-          <Row>
-            <Button
-              variant="outline-danger"
-              onClick={this.updateVotes.bind(this)}
-            >
-              <span>Like {this.state.votes}</span>
-            </Button>
-          </Row>
-          <hr />
-          <CommentForm
-            className={"my-4"}
-            videoId={this.state.id}
-            enableComment={this.state.enableComment}
-            comment={this.state.comment}
-            userToken={this.state.userToken}
-            commentOnChange={(value) => this.handleCommentOnChange(value)}
-          />
-          <hr />
-          <Comments videoId={this.state.id} />
+          <Grid centered columns={6}>
+            <Grid.Column>
+              <Button
+                variant="outline-danger"
+                onClick={this.updateVotes.bind(this)}
+                color="red"
+                content={"like " + this.state.votes}
+                icon="heart"
+                size="large"
+              />
+            </Grid.Column>
+
+            <Grid.Row centered columns={2}>
+              <Grid.Column>
+                <CommentForm
+                  className={"my-4"}
+                  videoId={this.state.id}
+                  enableComment={this.state.enableComment}
+                  comment={this.state.comment}
+                  userToken={this.state.userToken}
+                  commentOnChange={(value) => this.handleCommentOnChange(value)}
+                />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row centered columns={2}>
+              <Grid.Column>
+                <Comments videoId={this.state.id} />
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
         </div>
       );
     } else {
@@ -137,8 +148,9 @@ class SinglePages extends React.Component {
       <div>
         <NavigationBar />
         <Jumbo />
-
-        <Container>{displayContent}</Container>
+        <div className="back">
+          <Container>{displayContent}</Container>
+        </div>
       </div>
     );
   }

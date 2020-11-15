@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
-import { Form, Col, Button, Row } from "react-bootstrap";
-import "./style/commentForm.css";
+import { Col, Row } from "react-bootstrap";
+import { Grid, Button, Form, TextArea } from "semantic-ui-react";
+
+//import "./style/commentForm.css";
 
 class CommentForm extends React.Component {
   handleOnSubmit(event) {
@@ -24,37 +26,43 @@ class CommentForm extends React.Component {
   render() {
     if (this.props.enableComment) {
       return (
-        <Form onSubmit={(e) => this.handleOnSubmit(e)}>
-          <Form.Row>
-            <Col lg={"12"}>
-              <Form.Group controlId={"formComment"}>
-                <Form.Label>Comments: </Form.Label>
-                <Form.Control
-                  as={"textarea"}
-                  name={"comment"}
-                  value={this.props.comment}
-                  onChange={(e) => this.props.commentOnChange(e.target.value)}
-                  row={"5"}
-                />
-              </Form.Group>
-            </Col>
-          </Form.Row>
-          <Form.Row>
-            <Col className={"text-right"} lg={"12"}>
-              <Button variant="primary" type={"submit"}>
-                Submit
-              </Button>
-            </Col>
-          </Form.Row>
+        <Form reply onSubmit={(e) => this.handleOnSubmit(e)}>
+          <Grid.Row centered columns={1}>
+            <Grid.Column>
+              <Form.Field
+                name="description"
+                control={TextArea}
+                width={20}
+                position="center"
+                value={this.props.comment}
+                onChange={(e) => this.props.commentOnChange(e.target.value)}
+                defaultValue="Default text..."
+                type="text"
+                placeholder="Leave your comments!"
+              />
+            </Grid.Column>
+          </Grid.Row>
+          <Grid.Row centered columns={6}>
+            <Grid.Column>
+              <Button
+                position="right"
+                content="Add Reply"
+                labelPosition="right"
+                icon="edit"
+                primary
+                type="submit"
+              />
+            </Grid.Column>
+          </Grid.Row>
         </Form>
       );
     } else {
       return (
         <Row>
           <Col className={"text-center"} lg={"12"}>
-            <h3>
-              If you want to leave and vote comments, please{" "}
-              <a href="/login">login</a> first.{" "}
+            <h3 style={{ background: "#fcaf58" }}>
+              If you want to leave comments, please <a href="/login">login</a>{" "}
+              first.{" "}
             </h3>
           </Col>
         </Row>
