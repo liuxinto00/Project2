@@ -60,7 +60,7 @@ class CommentForm extends React.Component {
       return (
         <Row>
           <Col className={"text-center"} lg={"12"}>
-            <h3 style={{ background: "#fcaf58" }}>
+            <h3 style={{ color: "black", fontFamily: "Chalkduster, fantasy" }}>
               If you want to leave comments, please <a href="/login">login</a>{" "}
               first.{" "}
             </h3>

@@ -6,15 +6,21 @@ class Jumbo extends Component {
   render() {
     return (
       <div
-        className="jumbotron d-flex align-items-center"
+        className="jumbotron text-center d-flex align-items-center justify-content-center"
         style={{
           "text-align": "center",
-          fontFamily: "lato",
+          fontFamily: "Marker Felt, fantasy",
           opacity: "0.8",
         }}
       >
         <div className="content">
-          <h1>Pettube</h1>
+          <h1
+            style={{
+              fontFamily: "Marker Felt, fantasy",
+            }}
+          >
+            Pettube
+          </h1>
           <p className="lead">The cuttest pettube for pets.</p>
         </div>
       </div>

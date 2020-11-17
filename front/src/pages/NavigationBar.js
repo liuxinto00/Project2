@@ -52,7 +52,11 @@ class NavigationBar extends React.Component {
             Logout
           </Button>
           <a href="/user-profile">
-            <img id={"rightCornerIcon"} src="/images/avatar.svg" alt="" />
+            <img
+              id={"rightCornerIcon"}
+              src="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"
+              alt=""
+            />
           </a>
         </div>
       );
@@ -62,7 +66,11 @@ class NavigationBar extends React.Component {
           <Button className={"mx-1"} variant={"primary"} href={"/register"}>
             Register
           </Button>
-          <img id={"rightCornerIcon"} src="/images/avatar.svg" alt="" />
+          <img
+            id={"rightCornerIcon"}
+            src="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"
+            alt=""
+          />
           <Button className={"mx-1"} variant={"success"} href={"/login"}>
             Sign in
           </Button>

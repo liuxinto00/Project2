@@ -92,7 +92,11 @@ class SinglePages extends React.Component {
         <div style={{ "text-align": "center" }}>
           <Row>
             <Col className={"text-center my-4"} lg={"12"}>
-              <h1>{this.state.name}</h1>
+              <h1
+                style={{ color: "black", fontFamily: "Chalkduster, fantasy" }}
+              >
+                {this.state.name}
+              </h1>
             </Col>
           </Row>
           <iframe

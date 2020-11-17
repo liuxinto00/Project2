@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 //import { Row, Col } from "react-bootstrap";
 import PropTypes from "prop-types";
-import { Comment } from "semantic-ui-react";
+import { Comment, Header } from "semantic-ui-react";
 
 // const sectionStyle = {
 //   width: "60%",
@@ -40,27 +40,39 @@ class Comments extends React.Component {
     } else {
       content = this.state.comments.map((value, index) => {
         return (
-          <div key={index}>
-            <Comment.Group>
-              <Comment>
-                <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
-
+          <Comment key={index}>
+            <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
+            <Comment.Content>
+              <div
+                style={{
+                  display: "inline-flex",
+                }}
+              >
                 <Comment.Author>
                   {value.userToken ? value.userToken : "Jack"}
                 </Comment.Author>
-                <Comment.Content>
-                  <Comment.Metadata>
-                    <div>{value.time}</div>
-                  </Comment.Metadata>
-                  <Comment.Text>{value.comment}</Comment.Text>
-                </Comment.Content>
-              </Comment>
-            </Comment.Group>
-          </div>
+                <Comment.Metadata>{value.time}</Comment.Metadata>
+              </div>
+              <Comment.Text
+                style={{ color: "black", fontFamily: "Chalkduster, fantasy" }}
+              >
+                {value.comment}
+              </Comment.Text>
+            </Comment.Content>
+          </Comment>
         );
       });
     }
-    return content;
+    return (
+      <div>
+        <Comment.Group>
+          <Header as="h3" dividing>
+            Comments
+          </Header>
+          {content}
+        </Comment.Group>
+      </div>
+    );
   }
 
   render() {

@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import "./style/button1.css";
 
 import Jumbo from "./Jumbotron.js";
 
@@ -8,7 +7,9 @@ import NavigationBar from "./NavigationBar.js";
 
 import axios from "axios";
 import { Row } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "semantic-ui-css/semantic.min.css";
+import { Button } from "semantic-ui-react";
 
 class App extends React.Component {
   constructor(props) {
@@ -30,18 +31,24 @@ class App extends React.Component {
     const links = this.state.videoList.map((value, index) => {
       return (
         <li key={index} style={{ "text-align": "left" }}>
-          <h2 style={{ "text-align": "left" }}>
-            <span className="span_color">
-              <div style={{ color: "black" }}>🐶{value.name}</div>
-            </span>
-          </h2>
           <div>
-            <a href={"/videos/" + value.id} style={{ color: "black" }}>
-              <button className="button1">
-                {" "}
-                👉Click to Add/See Comments👈
-              </button>
-            </a>
+            <h3 style={{ "text-align": "left" }}>
+              <span className="span_color">
+                <div
+                  style={{ color: "black", fontFamily: "Chalkduster, fantasy" }}
+                >
+                  🐶{value.name}
+                </div>
+              </span>
+            </h3>
+            <div>
+              <a href={"/videos/" + value.id} style={{ color: "black" }}>
+                <Button color="orange" size="big">
+                  {" "}
+                  👉Click to Add/See Comments👈
+                </Button>
+              </a>
+            </div>
           </div>
 
           <iframe

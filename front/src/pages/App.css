@@ -40,7 +40,6 @@
 }
 
 .span_color {
-    
   background-color: white; /* Green */
   border: none;
   color: white;
@@ -51,15 +50,10 @@
   margin: 4px 4px;
   transition-duration: 0.4s;
   cursor: pointer;
-  font-size:30px;
+  font-size: 30px;
   font-family: Arial;
-
 }
 .back {
-   background: url('background.jpg')   repeat ;
-   width:1500px;
-   
-
-   
-
+  background: url("background.jpg") repeat;
+  width: 100%;
 }
