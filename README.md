@@ -1,59 +1,47 @@
-# Petube
+#Petube video sharing website :rainbow:
 
-### Project Description ###
-Welcome to Petube and watch cute animal videos! We are a web streaming application which offers online streaming of a library of our carefully selected videos. You can also sign up and log in to add your comments and likes to your favorite videos. It’s like a Netflix for animal lovers and a happy place that will melt your heart.
+**Project 3** for CS5610 Web Development at Northeastern University <br />
+**Url** to class: https://johnguerra.co/classes/webDevelopment_fall_2020/<br />
+**Authors:** Xintong Lkiu and Yao Xiao<br />
+**Objective:** Building a animals' video sharing website for animal lovers where users can register, signin to watch and comment the videos. It acts like a platform to melt users' heart.<br />
+**Used Technologies:** Sublime text, eslint and Js Prettier 
+**Used Programming Languages:** Java Script, CSS and JSX <br />
+**Used Running Environment:** Node.js <br />
+**Used Programming Frameworks:** Express and React.js <br />
+**Used database:** MongoDb (NoSQL) <br />
+**Used Packages:** React-bootstrap, sematic-ui-react <br />
 
-In the homepage, you can see all of our curated videos. You can just watch the videos on the homepage. If you want to get interactive, you can click the title of the video you’re interested, which will bring you to the video’s own page. Once you registered and logged in, you can add comments and likes to express your opinion about the video!
+**Structure of Website:**
+----------------------------------------------------------------------------------------------------------------------------------------
+**Homapage**<br />
+<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/homepage.png" alt="alt text" width="750" height="350"><br />
+**Video**
 
+<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/video.png" alt="alt text" width="750" height="350">
 
+**Comments**
 
-### Instruction to Build ###
-The database is on MongoDB Atlas and the website is hosted on heroku here. To install and run, do the following:
+<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/comment.png" alt="alt text" width="750" height="350">
 
-git clone https://github.com/liuxinto00/Project2 
+**Register**
 
-cd Project2
+<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/register.png" alt="alt text" width="750" height="350">
 
-yarn install
+**Signin**
 
-yarn start
+<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/signin.png" alt="alt text" width="750" height="350">
 
-cd front
+**Instruction to build:**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+1. Build a file on your pc <br />
+2. cd the file and do git clone the repository <br />
+3. Open two terminals on your pc <br />
+4. both terminals cd the file of the project <br />
+5. do npm install for the first terminal <br />
+6. cd "front" file and do npm install and do yarn build <br />
+7. after done npm install for both terminal, first terminal do npm start and second one do yarn start <br />
+8. The webiste will be poped up automatically in your browser otherwise navigate to: http://localhost3000 in your browser <br />
 
-yarn install
-
-yarn build
-
-yarn start
-
-
-
-### Project Objective ###
-Learn and explore the popular and powerful MERN stack techologies(MongoDB, Express.js, React, and Node.js)to building dynamic web sites and web applications. Because all components of the MERN stack support programs that are written in JavaScript, we can learn more about Javascript via building the MERN applicationsusing one language for both server-side and client-side execution environments.
-
-
-
-### Author ###
-Xintong Liu & Michelle Duan
-
-
-
-### Class Link ###
-CS 5610 Web Development
-https://johnguerra.co/classes/webDevelopment_fall_2020/
-
-
-
-### Licence ###
-This project is under MIT license.
-
-
-
-### Screenshot ###
-![](img/screenshot1.png)
-![](img/screenshot2.png)
-￼
-
-### Demo Video ###
-Watch our web application demo video here:
-https://youtu.be/C7Lcwc9Ncc8
+**Notes:**
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+This proejct is modified with the concept of design, accessability and usability on project 2 (Xintong Liu's code) for cs5610 Web Development at Northeastern University, All rights Reserved. 
