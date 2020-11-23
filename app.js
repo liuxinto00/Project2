@@ -20,8 +20,5 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/videos", videosRouter);
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/front/build/index.html"));
-});
 
 module.exports = app;
