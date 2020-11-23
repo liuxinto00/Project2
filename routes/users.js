@@ -22,7 +22,7 @@ mongoClient.connect(url, { useUnifiedTopology: true }, function (
 
 router.post("/register", function (request, response) {
   const data = request.body.data;
-  db.collection("users").findOne({ _id: data.email }, function (error, result) {
+  db.collection("users").findOne({ username: data.username }, function (error, result) {
     if (error !== undefined && error !== null) {
       // occurs error
       response.status(500);
@@ -33,11 +33,11 @@ router.post("/register", function (request, response) {
     } else if (result !== null) {
       response.status(400);
       response.send(
-        "Email " + data.email + " has been occupied. Try another one. "
+        "Username " + data.username + " has been occupied. Try another one. "
       );
     } else {
       db.collection("users").insertOne(
-        { _id: data.email, username: data.username, password: data.password },
+        {  username: data.username, password: data.password  },
         function (error, result) {
           assert.equal(null, error);
           assert.equal(1, result.insertedCount);
@@ -50,6 +50,9 @@ router.post("/register", function (request, response) {
 
 router.post("/authenticate", urlencodedParser, function (request, response) {
   const data = request.body.data;
+  if(!db) {
+    return response.json({message: "waiting"});
+  }
   db.collection("users").findOne({ username: data.username }, function (
     error,
     result

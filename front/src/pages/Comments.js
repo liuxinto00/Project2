@@ -34,6 +34,7 @@ class Comments extends React.Component {
   }
 
   renderComments() {
+    const userName = this.props.userToken;
     let content = null;
     if (this.state.comments.length <= 0) {
       content = <div></div>;
@@ -52,7 +53,7 @@ class Comments extends React.Component {
                 }}
               >
                 <Comment.Author>
-                  {value.userToken ? value.userToken : "Jack"}
+                  {userName === value.userToken ? value.userToken : "Jack"}
                 </Comment.Author>
                 <Comment.Metadata>{value.time}</Comment.Metadata>
               </div>
@@ -85,6 +86,7 @@ class Comments extends React.Component {
 
 Comments.propTypes = {
   videoId: PropTypes.string.isRequired,
+  userToken: PropTypes.string.isRequired,
 };
 
 export default Comments;

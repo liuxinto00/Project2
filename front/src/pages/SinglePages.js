@@ -56,6 +56,11 @@ class SinglePages extends React.Component {
     });
   }
 
+  refreshComments() {
+    this.comments_child.getCommonents();
+  }
+
+
   postData(url, data) {
     console.log(data);
     return fetch(url, {
@@ -129,16 +134,17 @@ class SinglePages extends React.Component {
                   enableComment={this.state.enableComment}
                   comment={this.state.comment}
                   userToken={this.state.userToken}
+                  refreshComments={() => this.refreshComments()}
                   commentOnChange={(value) => this.handleCommentOnChange(value)}
                 />
+                {/* <hr /> */}
+                <Comments ref={child => this.comments_child = child} videoId={this.state.id} userToken={this.state.userToken} />
               </Grid.Column>
             </Grid.Row>
-            <Grid.Row centered columns={2}>
-              <Grid.Column>
-                <Comments videoId={this.state.id} />
-              </Grid.Column>
-            </Grid.Row>
+     
+          
           </Grid>
+
         </div>
       );
     } else {
