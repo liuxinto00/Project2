@@ -6,7 +6,8 @@ const bodyParser = require("body-parser");
 require("dotenv").config();
 require("dotenv/config");
 
-const url = process.env.MONGODB_URI || require("../db/mongoDetails.js");
+const url =
+  "mongodb://brad123:brad123@tmcluster-shard-00-00.49zsn.mongodb.net:27017,tmcluster-shard-00-01.49zsn.mongodb.net:27017,tmcluster-shard-00-02.49zsn.mongodb.net:27017/test?ssl=true&replicaSet=atlas-a1od78-shard-0&authSource=admin&retryWrites=true";
 let db;
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
@@ -19,19 +20,28 @@ mongoClient.connect(url, { useUnifiedTopology: true }, function (
   db = client.db("posts");
 });
 
-router.post("/register", urlencodedParser, function (request, response) {
+router.post("/register", function (request, response) {
   const data = request.body.data;
-  db.collection("users").findOne({ username: data.username }, function (
-    error,
-    result
-  ) {
-    if (result != null) {
-      response.status(409).send("User already exists.");
+  db.collection("users").findOne({ _id: data.email }, function (error, result) {
+    if (error !== undefined && error !== null) {
+      // occurs error
+      response.status(500);
+      response.send(
+        "Since server encounters error, registration failed. details: " +
+          error.message
+      );
+    } else if (result !== null) {
+      response.status(400);
+      response.send(
+        "Email " + data.email + " has been occupied. Try another one. "
+      );
     } else {
       db.collection("users").insertOne(
-        { username: data.username, password: data.password },
+        { _id: data.email, username: data.username, password: data.password },
         function (error, result) {
-          response.send(result);
+          assert.equal(null, error);
+          assert.equal(1, result.insertedCount);
+          response.json({ message: "finish" });
         }
       );
     }
@@ -46,7 +56,6 @@ router.post("/authenticate", urlencodedParser, function (request, response) {
   ) {
     if (result === null || result.password != data.password) {
       response.status(401).send("Username or Password not correct.");
-      response.send({ match: false });
     } else {
       response.status(200);
       response.send({ match: true });

@@ -1,12 +1,13 @@
 import React from "react";
-import { ButtonToolbar, Button } from "react-bootstrap";
+import { Button } from "semantic-ui-react";
 import Cookies from "universal-cookie";
 import "./style/navigation-bar.css";
 
-import { NavLink } from "react-router-dom";
+//import { NavLink } from "react-router-dom";
 import { Row, Col, Menu } from "antd";
-import HomeOutlined from "@ant-design/icons";
-//import "./style/antStyle.less";
+//import HomeOutlined from "@ant-design/icons";
+import { Icon } from "semantic-ui-react";
+//import "./style/button1.css";
 
 class NavigationBar extends React.Component {
   constructor(props) {
@@ -47,6 +48,7 @@ class NavigationBar extends React.Component {
           <Button
             className={"mx-1"}
             variant={"primary"}
+            color={"red"}
             onClick={(e) => this.handleLogout(e)}
           >
             Logout
@@ -62,26 +64,48 @@ class NavigationBar extends React.Component {
       );
     } else {
       rightCornerContent = (
-        <ButtonToolbar>
-          <Button className={"mx-1"} variant={"primary"} href={"/register"}>
-            Register
-          </Button>
-          <img
-            id={"rightCornerIcon"}
-            src="https://www.humanesociety.org/sites/default/files/styles/1240x698/public/2020-07/kitten-510651.jpg?h=f54c7448&itok=ZhplzyJ9"
-            alt=""
-          />
-          <Button className={"mx-1"} variant={"success"} href={"/login"}>
-            Sign in
-          </Button>
-        </ButtonToolbar>
+        <div
+          style={{
+            fontSize: "20px",
+            fontFamily: "Chalkduster, fantasy",
+          }}
+        >
+          <Button.Group>
+            <Button
+              style={{
+                fontSize: "18px",
+                fontFamily: "Chalkduster, fantasy",
+              }}
+              href={"/register"}
+            >
+              Register
+            </Button>
+            <Button.Or />
+            <Button
+              style={{
+                fontSize: "18px",
+                fontFamily: "Chalkduster, fantasy",
+              }}
+              href={"/login"}
+            >
+              Login
+            </Button>
+          </Button.Group>
+        </div>
       );
     }
 
     return (
       <Row>
         <Col sm={14} md={10} lg={8} xl={6}>
-          <div className="brand">
+          <div
+            className="brand"
+            style={{
+              color: "black",
+              fontSize: "18px",
+              fontFamily: "Chalkduster, fantasy",
+            }}
+          >
             <img
               src="https://res.cloudinary.com/masterchef/image/upload/v1599206804/icon_jzvahe.png"
               alt="icon"
@@ -94,16 +118,20 @@ class NavigationBar extends React.Component {
         {/* Menu */}
         <Col sm={2} md={3} lg={5} xl={3}>
           {/* <Menu theme="dark" mode="horizontal"> */}
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            style={{ background: "#fcaf58" }}
-          >
-            <Menu.Item key="1" className="select">
-              <HomeOutlined />
-              <span>
-                <NavLink to="/">Home</NavLink>
-              </span>
+          <Menu mode="horizontal" style={{ background: "#ff8c1a" }}>
+            <Menu.Item>
+              <a href="/">
+                <div
+                  style={{
+                    fontSize: "17px",
+                    fontFamily: "Chalkduster, fantasy",
+                    color: "white",
+                  }}
+                >
+                  <Icon name="home" size="large" />
+                  HOME
+                </div>
+              </a>
             </Menu.Item>
 
             {/* <Menu.Item key="3">

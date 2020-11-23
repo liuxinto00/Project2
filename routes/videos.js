@@ -5,7 +5,8 @@ const assert = require("assert");
 const objectId = require("mongodb").ObjectID;
 require("dotenv").config();
 // Connection URL
-const url = process.env.MONGODB_URI || require("../db/mongoDetails.js");
+const url =
+  "mongodb://brad123:brad123@tmcluster-shard-00-00.49zsn.mongodb.net:27017,tmcluster-shard-00-01.49zsn.mongodb.net:27017,tmcluster-shard-00-02.49zsn.mongodb.net:27017/test?ssl=true&replicaSet=atlas-a1od78-shard-0&authSource=admin&retryWrites=true";
 
 let db;
 
@@ -142,7 +143,8 @@ router.post("/addComments", function (request, response) {
 function connect(callback) {
   var MongoClient = require("mongodb").MongoClient;
 
-  var dbURI = process.env.MONGODB_URI || require("../db/mongoDetails.js");
+  var dbURI =
+    "mongodb://brad123:brad123@tmcluster-shard-00-00.49zsn.mongodb.net:27017,tmcluster-shard-00-01.49zsn.mongodb.net:27017,tmcluster-shard-00-02.49zsn.mongodb.net:27017/test?ssl=true&replicaSet=atlas-a1od78-shard-0&authSource=admin&retryWrites=true";
 
   var client = new MongoClient(dbURI);
 

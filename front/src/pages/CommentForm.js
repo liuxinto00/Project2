@@ -27,7 +27,13 @@ class CommentForm extends React.Component {
     if (this.props.enableComment) {
       return (
         <Form reply onSubmit={(e) => this.handleOnSubmit(e)}>
-          <Grid.Row centered columns={1}>
+          <Grid.Row
+            centered
+            columns={1}
+            style={{
+              display: "inline",
+            }}
+          >
             <Grid.Column>
               <Form.Field
                 name="description"
@@ -42,7 +48,13 @@ class CommentForm extends React.Component {
               />
             </Grid.Column>
           </Grid.Row>
-          <Grid.Row centered columns={6}>
+          <Grid.Row
+            centered
+            columns={6}
+            style={{
+              display: "inline",
+            }}
+          >
             <Grid.Column>
               <Button
                 position="right"

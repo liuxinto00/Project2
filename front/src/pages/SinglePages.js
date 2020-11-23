@@ -27,6 +27,7 @@ class SinglePages extends React.Component {
     const id = this.props.match.params.id;
     const cookies = new Cookies();
     const userToken = cookies.get("pwLoggedIn");
+
     axios
       .get("/videos/getContent", {
         params: {
@@ -100,6 +101,7 @@ class SinglePages extends React.Component {
             </Col>
           </Row>
           <iframe
+            title="video"
             width="990"
             height="600"
             src={this.state.url}

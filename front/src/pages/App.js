@@ -43,15 +43,22 @@ class App extends React.Component {
             </h3>
             <div>
               <a href={"/videos/" + value.id} style={{ color: "black" }}>
-                <Button color="orange" size="big">
+                <Button
+                  color="red"
+                  size="big"
+                  style={{
+                    fontFamily: "Chalkduster, fantasy",
+                  }}
+                >
                   {" "}
-                  👉Click to Add/See Comments👈
+                  👉 Click to Add/See Comments 👈
                 </Button>
               </a>
             </div>
           </div>
 
           <iframe
+            title="video"
             width="630"
             height="450"
             src={value.url}

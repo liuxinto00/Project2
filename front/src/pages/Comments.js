@@ -41,7 +41,10 @@ class Comments extends React.Component {
       content = this.state.comments.map((value, index) => {
         return (
           <Comment key={index}>
-            <Comment.Avatar src="https://react.semantic-ui.com/images/avatar/small/matt.jpg" />
+            <Comment.Avatar
+              src="https://react.semantic-ui.com/images/avatar/small/matt.jpg"
+              alt="avatar"
+            />
             <Comment.Content>
               <div
                 style={{
