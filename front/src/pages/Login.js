@@ -38,7 +38,7 @@ class Login extends React.Component {
       .then((response) => {
         if (response.data.match) {
           const cookies = new Cookies();
-          cookies.set("pwLoggedIn", this.state.userName);
+          cookies.set("pwLoggedIn", this.state.email);
         }
         this.setState({
           loggedIn: response.data.match,

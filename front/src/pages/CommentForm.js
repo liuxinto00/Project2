@@ -13,15 +13,12 @@ class CommentForm extends React.Component {
       .post("/videos/addComments", {
         data: {
           videoId: this.props.videoId,
-          userToken: this.props.userToken,
+          username: this.props.username,
           comment: this.props.comment,
         },
       })
       .then((response) => {
         console.log(response.data);
-        if(response.data.code === 200) {
-          this.props.refreshComments();
-        }
         this.props.commentOnChange("");
       });
   }
@@ -88,11 +85,10 @@ class CommentForm extends React.Component {
 
 CommentForm.propTypes = {
   videoId: PropTypes.string.isRequired,
-  userToken: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
   enableComment: PropTypes.bool.isRequired,
   comment: PropTypes.string.isRequired,
   commentOnChange: PropTypes.func.isRequired,
-  refreshComments: PropTypes.func.isRequired
 };
 
 export default CommentForm;
