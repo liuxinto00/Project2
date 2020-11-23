@@ -2,7 +2,7 @@
 
 **Project 3** for CS5610 Web Development at Northeastern University <br />
 **Url** to class: https://johnguerra.co/classes/webDevelopment_fall_2020/<br />
-**Authors:** Xintong LiU and Yao Xiao<br />
+**Authors:** Xintong Lkiu and Yao Xiao<br />
 **Objective:** Building a animals' video sharing website for animal lovers where users can register, signin to watch and comment the videos. It acts like a platform to melt users' heart.<br />
 **Used Technologies:** Sublime text, eslint and Js Prettier 
 **Used Programming Languages:** Java Script, CSS and JSX <br />
