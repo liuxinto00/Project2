@@ -45,19 +45,3 @@
 **Notes:**
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 This proejct is modified with the concept of design, accessability and usability on project 2 (Xintong Liu's code) for cs5610 Web Development at Northeastern University, All rights Reserved. 
-
-
-
-### Licence ###
-This project is under MIT license.
-
-
-
-### Screenshot ###
-![](img/screenshot1.png)
-![](img/screenshot2.png)
-￼
-
-### Demo Video ###
-Watch our web application demo video here:
-https://youtu.be/C7Lcwc9Ncc8
