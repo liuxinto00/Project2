@@ -1,3 +1,4 @@
+//Hi, I think the structure is pretty clear, and better to include all the .pngs into one folder
 import React from "react";
 import "./App.css";
 
