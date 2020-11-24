@@ -1,4 +1,4 @@
-#Petube video sharing website :rainbow:
+# Petube video sharing website :rainbow:
 
 **Project 3** for CS5610 Web Development at Northeastern University <br />
 **Url** to class: https://johnguerra.co/classes/webDevelopment_fall_2020/<br />
@@ -14,22 +14,22 @@
 **Structure of Website:**
 ----------------------------------------------------------------------------------------------------------------------------------------
 **Homapage**<br />
-<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/homepage.png" alt="alt text" width="750" height="350"><br />
+<img src="https://raw.githubusercontent.com/liuxinto00/Project3/main/homepage.png" alt="alt text" width="750" height="350"><br />
 **Video**
 
-<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/video.png" alt="alt text" width="750" height="350">
+<img src="https://raw.githubusercontent.com/liuxinto00/Project3/main/video.png" alt="alt text" width="750" height="350">
 
 **Comments**
 
-<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/comment.png" alt="alt text" width="750" height="350">
+<img src="https://raw.githubusercontent.com/liuxinto00/Project3/main/comment.png" alt="alt text" width="750" height="350">
 
 **Register**
 
-<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/register.png" alt="alt text" width="750" height="350">
+<img src="https://raw.githubusercontent.com/liuxinto00/Project3/main/register.png" alt="alt text" width="750" height="350">
 
 **Signin**
 
-<img src="https://github.com/XIAOYAO9602/webprojectpciture/blob/main/project3/signin.png" alt="alt text" width="750" height="350">
+<img src="https://raw.githubusercontent.com/liuxinto00/Project3/main/signin.png" alt="alt text" width="750" height="350">
 
 **Instruction to build:**
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
