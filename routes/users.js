@@ -19,6 +19,9 @@ mongoClient.connect(url, { useUnifiedTopology: true }, function (
   db = client.db("posts");
 });
 
+// Alex: this function is storing the actual password in the database
+// suggest using hash function for store the hashed password.
+
 router.post("/register", function (request, response) {
   const data = request.body.data;
   db.collection("users").findOne({ _id: data.email }, function (error, result) {
@@ -46,6 +49,8 @@ router.post("/register", function (request, response) {
     }
   });
 });
+
+// Alex: as suggested above, use hash function to match with the hashed password in the database. 
 
 router.post("/authenticate", urlencodedParser, function (request, response) {
   const data = request.body.data;
