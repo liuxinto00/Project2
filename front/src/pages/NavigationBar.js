@@ -40,6 +40,8 @@ class NavigationBar extends React.Component {
     });
   }
 
+ 
+   //Alex: suggest putting style in a seperate css file like all your others compoenets did. 
   render() {
     let rightCornerContent = null;
     if (this.state.loggedIn) {
@@ -61,7 +63,7 @@ class NavigationBar extends React.Component {
             />
           </a>
         </div>
-      );
+      );                       
     } else {
       rightCornerContent = (
         <div
