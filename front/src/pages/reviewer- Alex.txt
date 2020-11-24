@@ -1,0 +1,9 @@
+Alex review comments
+
+1. Good job. Your implementation is clean and easy to understand. You have implemented the components separately and use them in your singlePage.js. This is good because if you have another page, you can reuse these components. 
+
+2. you are using classes to implement your components and not using React hooks. I believe Prof. John requires us to use hooks. However, it's nice for me to see how React works with using classes. 
+
+3. I don't see accessibility labels in your components, such as "role" and "aria-labels" etc . 
+
+4. Suggest not storing actual user passwords in the database. You can use hash function npm packages for this.  
